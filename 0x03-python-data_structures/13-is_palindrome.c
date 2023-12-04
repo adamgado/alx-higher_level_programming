@@ -24,20 +24,35 @@ listint_t *reverse_list(listint_t **head)
  * @head: pointer to head of a list
  * Return: 1 if palindrome, 0 if not
  */
-int is_palindrome(listint_t **head);
+int is_palindrome(listint_t **head)
 {
-	if (*head == NULL || (*head)->next == NULL)
-		return (1);
+	listint_t *temp;
+	listint_t *reversed;
+	size_t size = 0;
 
-	reversed = reverse_list(&head)
-	while (reversed != NULL && *head != NULL) 
-	{ 
-		if (head->a != reversed->a)
-		{
-			return (0); 
-		}
-	head = head->next; 
-	reversed = reversed->next; 
-	} 
-	return (1); 
-} 
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return (1);
+	}
+	temp = *head;
+	while (temp)
+	{
+		size++;
+		temp = temp->next;
+	}
+	if ((size % 2) == 0 && temp->n != temp->next->n)
+	{
+		return (0);
+	}
+	temp = *head;
+	reversed = reverse_list(&temp);
+	while (reversed != NULL)
+	{
+		if (temp->n != reversed->n)
+			return (0);
+		temp = temp->next;
+		reversed = reversed->next;
+	}
+
+	return (1);
+}
