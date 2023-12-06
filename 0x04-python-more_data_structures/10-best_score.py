@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     if len(a_dictionary) == 0:
         return None
-    top_score = max(a_dictionary.values())
-    for a in a_dictionary.items():
-        if a_dictionary[a] == top_score:
-            return a
+    b_score = max(a_dictionary.values(), default=None)
+    for k, v in a_dictionary.items():
+        if v == b_score:
+            return k
