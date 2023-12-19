@@ -48,9 +48,12 @@ class Square:
 
     def my_print(self):
         """print the square with the #s."""
-        for a in range(self.__size):
-            for c in range(self.__position[0]):
-                print(" ", end="")
-            for b in range(self.__size):
-                print("#", end="\n" if b == self.__size - 1 and a != b else "")
-        print()
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for a in range(0, self.__position[1])]
+        for a in range(0, self.__size):
+            [print(" ", end="") for c in range(0, self.__position[0])]
+            [print("#", end="") for b in range(0, self.__size)]
+            print("")
