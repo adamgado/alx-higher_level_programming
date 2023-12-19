@@ -35,5 +35,5 @@ class Square:
         """print the square with the #s."""
         for a in range(self.__size):
             for b in range(self.__size):
-                print("#", end="")
-            print("\n")
+                print("#", end="\n" if b == self.__size - 1 and a != b else "")
+        print()
