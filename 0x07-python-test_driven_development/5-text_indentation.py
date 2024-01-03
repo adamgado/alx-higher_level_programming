@@ -11,11 +11,10 @@ def text_indentation(text):
     Raises:
         TypeError: text is not string
     """
-    if type(text) not in (str):
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
 
     for a in ".?:":
-        # print(a, text.split(a))
         text = (a + "\n\n").join(
             [line.strip(" ") for line in text.split(a)])
 

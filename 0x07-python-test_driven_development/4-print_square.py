@@ -12,7 +12,7 @@ def print_square(size):
         TypeError: size is not int
         ValueError: size is negative
     """
-    if type(size) not in (int):
+    if not isinstance(size, int):
         raise TypeError("size must be an integer")
 
     if size < 0:
