@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 0-rectangle.py
 """define 'rectangle' class"""
 
 
