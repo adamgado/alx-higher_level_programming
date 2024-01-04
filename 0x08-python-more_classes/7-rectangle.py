@@ -7,8 +7,10 @@ class Rectangle:
 
     Attributes:
         number_of_instances: rectangle instances count
+        print_symbol: symbol for printing shape
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initialize Rectangle
@@ -63,7 +65,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
 
-        shape += "\n".join("#" * self.__width
+        shape += "\n".join(str(self.print_symbol) * self.__width
                            for a in range(self.__height))
         return shape
 
