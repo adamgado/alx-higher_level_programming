@@ -53,6 +53,6 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
 
-        shape += "\n".join("#" * self.__width 
-                            for a in range(self.__height))
+        shape += "\n".join("#" * self.__width
+                           for a in range(self.__height))
         return shape
