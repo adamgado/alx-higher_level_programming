@@ -49,10 +49,12 @@ class Rectangle:
 
     def __str__(self):
         """return string to print Rectangle with #s"""
-        shape = ""
         if self.__width == 0 or self.__height == 0:
             return ("")
 
-        shape += "\n".join("#" * self.__width
-                           for a in range(self.__height))
-        return shape
+        shape = []
+        for a in range(self.__height):
+            [shape.append('#') for b in range(self.__width)]
+            if a != self.__height - 1:
+                shape.append("\n")
+        return ("".join(shape))
