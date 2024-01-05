@@ -1,0 +1,46 @@
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test all indent cases:
+    >>> text_indentation("testing. testing? testing: testing")
+    testing.
+    <BLANKLINE>
+    testing?
+    <BLANKLINE>
+    testing:
+    <BLANKLINE>
+    testing
+
+Test number:
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test no indent cases:
+    >>> text_indentation("testing testing")
+    testing testing
+    
+Test string between spaces:
+    >>> text_indentation("   testing   ")
+    testing
+    
+Test empty string:
+    >>> text_indentation("")
+
+Test string containing only spaces:
+    >>> text_indentation("   ")
+
+Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test just delimeters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
