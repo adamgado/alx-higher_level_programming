@@ -1,3 +1,9 @@
+The ``1-my_list`` module
+============================
+
+Using ``1-mylist``
+---------------------
+
 Import function from module:
     >>> MyList = __import__('1-my_list').MyList
 
