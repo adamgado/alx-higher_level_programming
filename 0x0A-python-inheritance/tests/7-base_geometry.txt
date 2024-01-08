@@ -22,13 +22,13 @@ test calling area with argument:
     TypeError: area() takes 1 positional argument but 2 were given
 
 test integer_validator:
-    >>> bg.integer_validator("key", 5)
+    >>> shape.integer_validator("key", 5)
 
 test integer_validator empty string:
-    >>> bg.integer_validator("", 1)
+    >>> shape.integer_validator("", 1)
 
 test integer_validator TypeError:
-    >>> shape.integer_validator("x", 3)
+    >>> shape.integer_validator("x", 3.3)
     Traceback (most recent call last):
     TypeError: x must be an integer
 
