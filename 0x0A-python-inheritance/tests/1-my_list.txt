@@ -12,7 +12,7 @@ test normal:
     [1, 2, 3]
 
 test list with negative numbers:
-    >>> new_list = MyList([-1000, -90, -1234567, 0, -2323323, -100])
+    >>> new_list = MyList([-1000, -90, -1234567, 0, -23232323, -100])
     >>> new_list.print_sorted()
     [-23232323, -1234567, -1000, -100, -90, 0]
 
