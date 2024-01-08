@@ -1,0 +1,58 @@
+Import function from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+test class type:
+    >>> shape = BaseGeometry()
+    >>> type(shape) == BaseGeometry
+    True
+
+test area:
+    >>> shape.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+test calling area by class:
+    >>> shape.__class__.area()
+    Traceback (most recent call last):
+    TypeError: area() missing 1 required positional argument: 'self'
+
+test calling area with argument:
+    >>> shape.area(10)
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
+test integer_validator:
+    >>> bg.integer_validator("key", 5)
+
+test integer_validator empty string:
+    >>> bg.integer_validator("", 1)
+
+test integer_validator TypeError:
+    >>> shape.integer_validator("x", 3)
+    Traceback (most recent call last):
+    TypeError: x must be an integer
+
+test integer_validator zero ValueError:
+    >>> shape.integer_validator("key", 0)
+    Traceback (most recent call last):
+    ValueError: key must be greater than 0
+
+test integer_validator negative ValueError:
+    >>> shape.integer_validator("key", -5)
+    Traceback (most recent call last):
+    ValueError: key must be greater than 0
+
+test calling integer_validator by class:
+    >>> shape.__class__.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+test calling integer_validator with no arguments:
+    >>> shape.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+test integer_validator with 3 arguments:
+    >>> shape.integer_validator(1, 2, 3)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
