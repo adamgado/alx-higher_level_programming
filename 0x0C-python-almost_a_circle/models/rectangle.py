@@ -81,3 +81,23 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
                                                 self.x, self.y,
                                                 self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """call internal function to assign arguments, args or kwargs"""
+        if args:
+            self.__assign(*args)
+        elif kwargs:
+            self.__assign(**kwargs)
+
+    def __assign(self, id=None, width=None, height=None, x=None, y=None):
+        """internal function that assigns arguments to attributes"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
