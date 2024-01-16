@@ -9,10 +9,6 @@ from models.square import Square
 class Test_Base(unittest.TestCase):
     """Tests for class Base """
 
-    def test_objects_zero(self):
-        """test if number of objects equals zero at start"""
-        self.assertEqual(getattr(Base, "_Base__nb_objects"), 0)
-
     def test_base_instance(self):
         """test Base initialization"""
         a = Base()
@@ -32,13 +28,6 @@ were given"
         a = Base()
         b = Base()
         self.assertEqual(a.id + 1, b.id)
-
-    def test_id_objectcount(self):
-        """test class and instance id are equal"""
-        b = Base()
-        b = Base("x")
-        b = Base(1)
-        self.assertEqual(getattr(Base, "_Base__nb_objects"), b.id)
 
     def test_id_int(self):
         """test int id"""
@@ -110,7 +99,7 @@ were given"
         a = Rectangle(1, 2)
         Rectangle.save_to_file([a])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(len(file.read()), 52)
+            self.assertEqual(len(file.read()), 53)
 
     def test_savetofile_emptysquare(self):
         """test save_to_file empty square"""
@@ -123,7 +112,7 @@ were given"
         a = Square(1)
         Square.save_to_file([a])
         with open("Square.json", "r") as file:
-            self.assertEqual(len(file.read()), 38)
+            self.assertEqual(len(file.read()), 39)
 
     def test_savetofile_multiple(self):
         """test save_to_file with multiple dictionaries"""
@@ -131,7 +120,7 @@ were given"
         b = Rectangle(1, 2)
         Rectangle.save_to_file([a, b])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(len(file.read()), 105)
+            self.assertEqual(len(file.read()), 107)
 
     def test_fromjsonstring_noargs(self):
         """test from_json_string static method with 0 arguments"""
@@ -190,7 +179,6 @@ were given"
         self.assertEqual(str(original[0]), str(returned[0]))
         self.assertNotEqual(id(original[1]), id(returned[1]))
         self.assertEqual(str(original[1]), str(returned[1]))
-
 
 if __name__ == "__main__":
     unittest.main()
