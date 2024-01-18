@@ -89,7 +89,7 @@ were given"
         self.assertEqual(dict, json_string)
 
 
-    def test_savetofile_none_rect(self):
+    def test_savetofile_norect(self):
         """test save_to_file class method no rectangle"""
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
@@ -108,7 +108,7 @@ were given"
         with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), 53)
 
-    def test_savetofile_none_square(self):
+    def test_savetofile_nosquare(self):
         """test save_to_file no square"""
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
