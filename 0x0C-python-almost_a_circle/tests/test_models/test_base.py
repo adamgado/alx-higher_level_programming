@@ -91,6 +91,7 @@ were given"
 
     def test_savetofile_emptyrect1(self):
         """test save_to_file class method no rectangle"""
+        os.remove("Rectangle.json")
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
@@ -104,6 +105,7 @@ were given"
 
     def test_savetofile_rectangle(self):
         """test save_to_file with rectangle"""
+        os.remove("Rectangle.json")
         a = Rectangle(1, 2)
         Rectangle.save_to_file([a])
         with open("Rectangle.json", "r") as file:
@@ -111,6 +113,7 @@ were given"
 
     def test_savetofile_emptysquare1(self):
         """test save_to_file no square"""
+        os.remove("Square.json")
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
@@ -124,6 +127,7 @@ were given"
 
     def test_savetofile_square(self):
         """test save_to_file with square"""
+        os.remove("Square.json")
         a = Square(1)
         Square.save_to_file([a])
         with open("Square.json", "r") as file:
@@ -131,6 +135,7 @@ were given"
 
     def test_savetofile_multiple(self):
         """test save_to_file with multiple dictionaries"""
+        os.remove("Rectangle.json")
         a = Rectangle(10, 5, 1, 2)
         b = Rectangle(1, 2)
         Rectangle.save_to_file([a, b])
