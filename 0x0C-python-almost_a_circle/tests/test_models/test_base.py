@@ -88,14 +88,13 @@ were given"
         dict = dict.replace("'", '"')
         self.assertEqual(dict, json_string)
 
-
-    def test_savetofile_norect(self):
+    def test_savetofile_emptyrect1(self):
         """test save_to_file class method no rectangle"""
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
-    def test_savetofile_emptyrect(self):
+    def test_savetofile_emptyrect2(self):
         """test save_to_file with empty rectangle"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
@@ -108,13 +107,13 @@ were given"
         with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), 53)
 
-    def test_savetofile_nosquare(self):
+    def test_savetofile_emptysquare1(self):
         """test save_to_file no square"""
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
-    def test_savetofile_emptysquare(self):
+    def test_savetofile_emptysquare2(self):
         """test save_to_file empty square"""
         Square.save_to_file([])
         with open("Square.json", "r") as file:
