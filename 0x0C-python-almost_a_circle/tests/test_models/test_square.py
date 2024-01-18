@@ -75,6 +75,13 @@ but 6 were given"
         err = "width must be > 0"
         self.assertEqual(str(e.exception), err)
 
+    def test_size_zero(self):
+        """test size zero error"""
+        with self.assertRaises(ValueError) as e:
+            a = Square(0)
+        err = "width must be > 0"
+        self.assertEqual(str(e.exception), err)
+
     def test_x_valueerror(self):
         """test x value error"""
         with self.assertRaises(ValueError) as e:

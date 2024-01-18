@@ -101,6 +101,20 @@ given"
         err = "y must be >= 0"
         self.assertEqual(str(e.exception), err)
 
+    def test_width_zero(self):
+        """test width zero error"""
+        with self.assertRaises(ValueError) as e:
+            a = Rectangle(0, 4)
+        err = "width must be > 0"
+        self.assertEqual(str(e.exception), err)
+
+    def test_height_zero(self):
+        """test height zero error"""
+        with self.assertRaises(ValueError) as e:
+            a = Rectangle(2, 0)
+        err = "height must be > 0"
+        self.assertEqual(str(e.exception), err)
+
     def test_size_with_position(self):
         """test all 4 arguments with no errors"""
         Base._Base__nb_objects = 0
