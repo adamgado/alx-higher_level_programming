@@ -117,7 +117,7 @@ were given"
 
     def test_savetofile_emptysquare2(self):
         """test save_to_file empty square"""
-        os.remove("Rectangle.json")
+        os.remove("Square.json")
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
