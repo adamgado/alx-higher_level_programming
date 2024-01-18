@@ -96,6 +96,7 @@ were given"
 
     def test_savetofile_emptyrect2(self):
         """test save_to_file with empty rectangle"""
+        os.remove("Rectangle.json")
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
@@ -115,6 +116,7 @@ were given"
 
     def test_savetofile_emptysquare2(self):
         """test save_to_file empty square"""
+        os.remove("Rectangle.json")
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
