@@ -1,8 +1,15 @@
 #!/usr/bin/node
-const Square = require('./6-square');
+const converter = require('./10-converter').converter;
 
-const s1 = new Square(4);
-s1.charPrint();
+let myConverter = converter(10);
 
-s1.charPrint('C');
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
 
+
+myConverter = converter(16);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
