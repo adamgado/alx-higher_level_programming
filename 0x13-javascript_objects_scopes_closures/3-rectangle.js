@@ -6,11 +6,11 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
-  print (c = 'X') {
+  print () {
     for (let a = 0; a < this.height; ++a) {
       let b = 0;
       for (; b < this.width; ++b) {
-        process.stdout.write(c);
+        process.stdout.write('X');
       }
       if (b === this.width) {
         console.log('');
