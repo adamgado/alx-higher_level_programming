@@ -13,4 +13,6 @@ if __name__ == "__main__":
     session = Session()
     for a in (session.query(State.name, City.id, City.name).filter(
               State.id == City.state_id)):
-        print("{}: ({}) {}".format(a[0], str(a[1]), a[2]))
+        print("{}: ({:d}) {}".format(a[0], a[1], a[2]))
+    session.commit()
+    session.close()
