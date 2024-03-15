@@ -13,3 +13,5 @@ if __name__ == '__main__':
     states_db = x.fetchall()
     for a in states_db:
         print(a)
+    x.close()
+    db_list.close()
