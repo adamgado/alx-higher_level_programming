@@ -13,7 +13,5 @@ if __name__ == '__main__':
               WHERE states.name LIKE BINARY %(state_name)s \
               ORDER BY cities.id ASC""", {'state_name': argv[4]})
     cities_db = x.fetchall()
-    city_list = list(a[0] for a in cities_db)
-    print(*city_list, sep=", ")
-    x.close()
-    db_list.close()
+    if cities_db is not None:
+        print(", ".join([a[1] for a in cities_db]))
