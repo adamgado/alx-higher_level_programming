@@ -10,7 +10,7 @@ if __name__ == '__main__':
     x = db_list.cursor()
     x.execute("""SELECT * FROM states \
               WHERE name LIKE BINARY %(name)s \
-              ORDER BY states.id ASC""", {'name': argv[4] })
+              ORDER BY states.id ASC""", {'name': argv[4]})
     states_db = x.fetchall()
     for a in states_db:
         print(a)
