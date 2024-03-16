@@ -16,5 +16,6 @@ if __name__ == "__main__":
     new_c = City(name='San Francisco')
     new_s.cities.append(new_c)
     session.add(new_s)
+    session.add(new_c)
     session.commit()
     session.close()
