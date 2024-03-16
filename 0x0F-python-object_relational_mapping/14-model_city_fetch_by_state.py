@@ -11,6 +11,10 @@ if __name__ == "__main__":
                               .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=db_engine)
     session = Session()
-    for a in (session.query(State.name, City.id, City.name)
-              .filter(State.id == City.state_id)):
-        print(a[0] + ": (" + str(a[1]) + ") " + a[2])
+    query = session.query(City, State).join(State)
+
+    for _c, _s in query.all():
+        print("{}: ({:d}) {}".format(_s.name, _c.id, _c.name))
+
+    session.commit()
+    session.close()
