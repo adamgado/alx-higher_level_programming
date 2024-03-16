@@ -12,7 +12,5 @@ if __name__ == "__main__":
                               .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=db_engine)
     session = Session()
-    for a in session.query(State).order_by(State.id):
-        print("{}: {}".format(a.id, a.name))
     for a in session.query(City).order_by(City.id):
         print("{}: {} -> {}".format(a.id, a.name, a.state.name))
