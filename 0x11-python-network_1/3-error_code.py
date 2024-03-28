@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""displays the value of the X-Request-Id variable"""
+"""manage urllib.error.HTTPError exceptions"""
 from urllib.request import Request, urlopen
 from sys import argv
 from urllib.error import HTTPError
