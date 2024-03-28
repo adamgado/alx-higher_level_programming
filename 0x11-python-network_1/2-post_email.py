@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""displays the value of the X-Request-Id variable"""
+"""email as a parameter, and displays the body of the response"""
 from urllib.request import Request, urlopen
 from sys import argv
 from urllib.parse import urlencode
