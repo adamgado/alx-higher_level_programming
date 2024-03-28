@@ -2,7 +2,7 @@
 """displays the value of the X-Request-Id variable"""
 from urllib.request import Request, urlopen
 from sys import argv
-from urllib.parse import urlencode
+from urllib.error import HTTPError
 
 
 if __name__ == "__main__":
@@ -12,4 +12,4 @@ if __name__ == "__main__":
         with urlopen(lnk) as r:
             print(r.read().decode('utf-8'))
     except HTTPError as err:
-        print('Error code:', err.code)
+        print('Error code: {}'.format(err.code))
