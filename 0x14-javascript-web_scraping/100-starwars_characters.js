@@ -1,19 +1,22 @@
 #!/usr/bin/node
-const req = require('request');
-const movieId = process.argv[2];
-const link = 'https://swapi.co/api/films/' + movieId;
-req(link, function (err, res, body) {
+// Prints all characters in a specific Star Wars movie from the api
+
+const request = require('request');
+const movie = process.argv[2];
+const url = 'https://swapi.co/api/films/' + movie;
+
+request(url, function (err, res, body) {
   if (err) {
     console.log(err);
   }
-  const movie = JSON.parse(body);
-  for (const characterId of movie.characters) {
-    req(characterId, function (err, res, body) {
+  let film = JSON.parse(body);
+  for (let character of film.characters) {
+    request(character, function (err, res, body) {
       if (err) {
         console.log(err);
       }
-      const chara = JSON.parse(body);
-      console.log(chara.name);
+      let chr = JSON.parse(body);
+      console.log(chr.name);
     });
   }
 });
