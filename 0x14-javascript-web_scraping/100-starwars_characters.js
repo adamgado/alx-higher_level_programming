@@ -9,13 +9,13 @@ request(url, function (err, res, body) {
   if (err) {
     console.log(err);
   }
-  let film = JSON.parse(body);
-  for (let character of film.characters) {
+  const film = JSON.parse(body);
+  for (const character of film.characters) {
     request(character, function (err, res, body) {
       if (err) {
         console.log(err);
       }
-      let chr = JSON.parse(body);
+      const chr = JSON.parse(body);
       console.log(chr.name);
     });
   }
